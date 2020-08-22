@@ -11,20 +11,12 @@
     "seed": "cd server && npm run seed",
     "heroku-postbuild": "cd client && npm run build"
   },
-  "author": "Edgar Torres",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "if-env": "^1.0.4"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/torreseam/Redux-shop-shop.git"
-  },
-  "bugs": {
-    "url": "https://github.com/torreseam/Redux-shop-shop/issues"
-  },
-  "homepage": "https://github.com/torreseam/Redux-shop-shop#readme"
+  }
 }
