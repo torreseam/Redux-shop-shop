@@ -1,54 +1,57 @@
 import {
   UPDATE_PRODUCTS,
-  ADD_TO_CART,
-  UPDATE_CART_QUANTITY,
-  REMOVE_FROM_CART,
-  ADD_MULTIPLE_TO_CART,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
+  ADD_TO_CART,
+  ADD_MULTIPLE_TO_CART,
+  REMOVE_FROM_CART,
+  UPDATE_CART_QUANTITY,
   CLEAR_CART,
   TOGGLE_CART
-} from "./actions";
+} 
+from './actions';
 
-const initialState = {
+const defaultState = {
   products: [],
+  cart: [],
+  cartOpen: false,
   categories: [],
   currentCategory: '',
-  cart: [],
-  cartOpen: false
-};
+}
 
-export const reducers = (state = initialState, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
+    //if action type value is the value of 'UPDATE_PRODUCTS', return a new state object with an updated products array 
     case UPDATE_PRODUCTS:
       return {
         ...state,
-        products: [...action.products],
+        products: [...action.products]
+      };
+
+    //if action type value is value of 'UPDATE_CATEGORIES', return a new state object with an updated categories array
+    case UPDATE_CATEGORIES:
+      return {
+        ...state,
+        categories: [...action.categories]
+      };
+
+    case UPDATE_CURRENT_CATEGORY:
+      return {
+        ...state,
+        currentCategory: action.currentCategory
       };
 
     case ADD_TO_CART:
       return {
         ...state,
         cartOpen: true,
-        cart: [...state.cart, action.product],
+        cart: [...state.cart, action.product]
       };
 
     case ADD_MULTIPLE_TO_CART:
       return {
         ...state,
-        cart: [...state.cart, ...action.products],
-      };
-
-    case UPDATE_CART_QUANTITY:
-      return {
-        ...state,
-        cartOpen: true,
-        cart: state.cart.map(product => {
-          if (action._id === product._id) {
-            product.purchaseQuantity = action.purchaseQuantity
-          }
-          return product
-        })
+        cart: [...state.cart, ...action.products]
       };
 
     case REMOVE_FROM_CART:
@@ -62,6 +65,19 @@ export const reducers = (state = initialState, action) => {
         cart: newState
       };
 
+    case UPDATE_CART_QUANTITY:
+      return {
+        ...state,
+        cartOpen: true,
+        cart: state.cart.map(product => {
+          if (action._id === product._id) {
+            product.purchaseQuantity = action.purchaseQuantity;
+          }
+
+          return product;
+        })
+      };
+
     case CLEAR_CART:
       return {
         ...state,
@@ -69,27 +85,17 @@ export const reducers = (state = initialState, action) => {
         cart: []
       };
 
+
     case TOGGLE_CART:
       return {
         ...state,
         cartOpen: !state.cartOpen
-      };
-
-    case UPDATE_CATEGORIES:
-      return {
-        ...state,
-        categories: [...action.categories],
-      };
-
-    case UPDATE_CURRENT_CATEGORY:
-      return {
-        ...state,
-        currentCategory: action.currentCategory
       }
 
     default:
       return state;
   }
-};
+}
 
-export default reducers;
+
+export default reducer;
