@@ -23,8 +23,9 @@ This application will allow users to search for books. Users are able to sign up
 Cick in this link for heroku application the image below is just an example of the page.
  ## [Heroku](https://r-shop-shop.herokuapp.com/)<br>
 
-<img src='./client/public/images/main.png'>
+<img src='./client/public/main.PNG'>
 
+<img src='../client/public/main.png'>
 
 
 ## License 
