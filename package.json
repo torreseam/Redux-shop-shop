@@ -1,7 +1,7 @@
 {
   "name": "mern-shopping",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1 align=\"center\">Redux- Shop</h1>",
   "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -11,7 +11,7 @@
     "seed": "cd server && npm run seed",
     "heroku-postbuild": "cd client && npm run build"
   },
-  "author": "",
+  "author": "Edgar Torres",
   "license": "ISC",
   "dependencies": {
     "if-env": "^1.0.4",
@@ -19,5 +19,13 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torreseam/Redux-shop-shop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torreseam/Redux-shop-shop/issues"
+  },
+  "homepage": "https://github.com/torreseam/Redux-shop-shop#readme"
 }
