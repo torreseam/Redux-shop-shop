@@ -25,7 +25,6 @@ Cick in this link for heroku application the image below is just an example of t
 
 <img src='./client/public/main.PNG'>
 
-<img src='../client/public/main.png'>
 
 
 ## License 
